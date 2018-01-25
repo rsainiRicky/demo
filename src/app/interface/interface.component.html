@@ -1,0 +1,25 @@
+<app-deviceinput></app-deviceinput>
+<table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">Sr No.</th>
+        <th scope="col">Interface</th>
+        <th scope="col">Ip</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><input *ngIf="editMode" type="text" class="form-control form-control-sm" id="ip_address" placeholder="Ip Address"><span *ngIf="!editMode">Mark</span></td>
+        <td><input *ngIf="editMode" type="text" class="form-control form-control-sm" id="ip_address" placeholder="Ip Address"><span *ngIf="!editMode">OTT</span></td>
+        <td>
+            <div *ngIf="!editMode" class="btn-group btn-group-sm" role="group">
+                <button type="button" class="btn btn-primary" (click)="editMode=true"><i class="fa fa-pencil"></i></button>
+                <button type="button" class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+              </div>
+              <button type="button" *ngIf="editMode" class="btn btn-primary btn-sm" (click)="updateFn()">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

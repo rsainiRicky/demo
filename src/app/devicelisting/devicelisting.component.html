@@ -8,18 +8,37 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td><input *ngIf="editMode" type="text" class="form-control form-control-sm" id="ip_address" placeholder="Ip Address"><span *ngIf="!editMode">Mark</span></td>
-        <td><input *ngIf="editMode" type="text" class="form-control form-control-sm" id="ip_address" placeholder="Ip Address"><span *ngIf="!editMode">OTT</span></td>
+      <tr *ngFor="let host of hosts">
+        <td>{{host.id}}</td>
+        <td><input *ngIf="editMode" type="text" class="form-control form-control-sm" id="hostname_input" placeholder="Host Name"><span *ngIf="!editMode">{{host.hostname}}</span></td>
+        <td><input *ngIf="editMode" type="text" class="form-control form-control-sm" id="ipaddress_input" placeholder="IP Address"><span *ngIf="!editMode">{{host.loopback}}</span></td>
         <td>
             <div *ngIf="!editMode" class="btn-group btn-group-sm" role="group">
                 <button type="button" class="btn btn-primary" (click)="editMode=true"><i class="fa fa-pencil"></i></button>
                 <button type="button" class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye" aria-hidden="true"></i></button>
               </div>
               <button type="button" *ngIf="editMode" class="btn btn-primary btn-sm" (click)="updateFn()">Update</button>
         </td>
       </tr>
     </tbody>
   </table>
+   <div class="modal fade" id="exampleModalCenter" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog  modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Edit Interfaces</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <app-interface></app-interface>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../services/common.service';
 
 @Component({
   selector: 'app-devicelisting',
@@ -7,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DevicelistingComponent implements OnInit {
   editMode:boolean = false;
-  constructor() { }
+  hosts:any = [];
+  constructor(private commonService:CommonService) { }
 
   ngOnInit() {
+    this.commonService.gethosts().subscribe(res=>{
+      this.hosts = res.json();
+    })
   }
+
   updateFn(){
     this.editMode = false;
   }

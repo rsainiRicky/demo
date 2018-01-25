@@ -7,13 +7,15 @@ import { DeviceinputComponent } from './deviceinput/deviceinput.component';
 import { DevicelistingComponent } from './devicelisting/devicelisting.component';
 import { CustomvalidationDirective } from './directives/customvalidation.directive';
 import { CommonService } from './services/common.service';
+import { InterfaceComponent } from './interface/interface.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DeviceinputComponent,
     DevicelistingComponent,
-    CustomvalidationDirective
+    CustomvalidationDirective,
+    InterfaceComponent,
   ],
   imports: [
     BrowserModule,HttpModule

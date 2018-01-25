@@ -1,23 +1,55 @@
-[
+{
+  "hosts": [
     {
-      "database": [
+      "hostname": "inlabs",
+      "id": 1,
+      "loopback": "192.168.0.1",
+      "interfaces": [
         {
-          "hostname": "infinitylabs",
-          "id": 1,
-          "loopback": "192.168.0.1",
-          "interfaces": [
-            {
-              "serialno": 1,
-              "inteface": "INFI-LAB-RTR-001",
-              "ipaddress": "192.168.0.1"
-            },
-            {
-              "serialno": 2,
-              "inteface": "INFI-LAB-RTR-002",
-              "ipaddress": "192.168.0.2"
-            }
-          ]
+          "serialno": 1,
+          "inteface": "INFI-LAB-RTR-001",
+          "ipaddress": "192.168.0.1"
+        },
+        {
+          "serialno": 2,
+          "inteface": "INFI-LAB-RTR-002",
+          "ipaddress": "192.168.0.2"
+        }
+      ]
+    },
+    {
+      "hostname": "outlabs",
+      "id": 2,
+      "loopback": "192.168.0.0",
+      "interfaces": [
+        {
+          "serialno": 1,
+          "inteface": "OUT-LAB-RTR-001",
+          "ipaddress": "192.168.0.1"
+        },
+        {
+          "serialno": 2,
+          "inteface": "OUT-LAB-RTR-002",
+          "ipaddress": "192.168.0.2"
+        }
+      ]
+    },
+    {
+      "hostname": "xlabs",
+      "id": 3,
+      "loopback": "192.168.0.1",
+      "interfaces": [
+        {
+          "serialno": 1,
+          "inteface": "INFI-LAB-RTR-001",
+          "ipaddress": "192.168.0.1"
+        },
+        {
+          "serialno": 2,
+          "inteface": "INFI-LAB-RTR-002",
+          "ipaddress": "192.168.0.2"
         }
       ]
     }
-]
+  ]
+}
